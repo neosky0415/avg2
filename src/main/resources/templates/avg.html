@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>평균</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}">
+</head>
+<body>
+
+<div class="container">
+    <h3 class="mt-3"> 과목 평균</h3>
+    <hr>
+    <form th:action="@{/avg_calc}" method="get">
+        <div class="row my-3">
+            <div class="col-3">
+                <label for="irum" class="form-label">이름</label>
+                <input th:value="${irum}" type="text" class="form-control" id="irum" name="irum">
+            </div>
+        </div>
+        <div class="my-3 row">
+            <div class="col-3">
+                <label for="kuk" class="form-label">국어</label>
+                <input th:value="${kuk}" type="text" class="form-control" id="kuk" name="kuk">
+            </div>
+            <div class="col-3">
+                <label for="math" class="form-label">수학</label>
+                <input th:value="${math}" type="text" class="form-control" id="math" name="math">
+            </div>
+            <div class="col-3">
+                <label for="sa" class="form-label">사회</label>
+                <input th:value="${sa}" type="text" class="form-control" id="sa" name="sa">
+            </div>
+        </div>
+        <div class="my-3 row">
+            <div class="col-3">
+                <button type="submit" class="btn btn-outline-info">평균 계산</button>
+            </div>
+        </div>
+        <div class="my-5 row">
+            <div class="col-3">
+                <label for="name1" class="form-label">이름</label>
+                <input th:value="${name1}" type="text" class="form-control" id="name1" readonly>
+            </div>
+            <div class="col-3">
+                <label for="avg" class="form-label">평균 결과</label>
+                <input th:value="${avg1}" type="text" class="form-control" id="avg" readonly>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
